@@ -5,7 +5,7 @@ export default function setTestRoutes(app) {
     const router = express.Router();
     const testContrler = new TestConroller();
     
-    router.route('/hello').get(testContrler.testReturn);
+    router.route('/test/hello').get(testContrler.testReturn);
 
     app.use('/api', router);
 }

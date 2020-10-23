@@ -24,43 +24,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan('dev'));
+initRoutes(app);
 app.get('/*', function(req, res) {
   // res.sendFile(path.join(__dirname, '../src/build', 'index.html'));
-  res.send('Hellow World!');
+  // res.send('Hellow World!');
 });
 
-initRoutes(app);
 app.listen(app.get('port'), () => {
-  console.log('Unkpat test server running on port: ' + app.get('port'));
+  console.log('Stellar test server running on port: ' + app.get('port'));
 });
-
-/*chatServer.listen(chatPort, function () {
-  console.log('Running chat server on port %s', chatPort);
-}); */
-
-/* io.on('connect', (socket: any) => {
-  console.log('Connected client on port %s.', chatPort);
-  socket.on('message', (m: Message) => {
-      console.log('[server](message): %s', JSON.stringify(m));
-      io.emit('message', m);
-  });
-
-  socket.on('disconnect', () => {
-      console.log('Client disconnected');
-  });
-}); */
-
-/* mongoose.connect(process.env.MONGODB_URI);
-const db = mongoose.connection;
- (<any>mongoose).Promise = global.Promise;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-
-  // initRoutes(app);
-
-
-});*/
 
 export { app };

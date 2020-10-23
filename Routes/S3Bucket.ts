@@ -5,7 +5,7 @@ export default function setTestRoutes(app) {
     const router = express.Router();
     const s3Conroller = new S3Conroller();
     
-    router.route('s3/download').get(s3Conroller.getFile);
+    router.route('/s3/download').get(s3Conroller.getFile);
 
     app.use('/api', router);
 }
